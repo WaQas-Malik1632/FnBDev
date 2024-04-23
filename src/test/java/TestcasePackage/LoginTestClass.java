@@ -21,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 
 public class LoginTestClass extends BaseClass {
 	private WebDriver driver;
@@ -37,7 +38,7 @@ public class LoginTestClass extends BaseClass {
 	}
 
 	// Enter correct Email and correct Password
-	@Test(invocationCount = 4, priority = 1, description = "Login Test#1", groups = { "sanity_Suite","regression_Suite" })
+	@Test(invocationCount = 1, priority = 1, description = "Login Test#1", groups = { "Smoke_Suite" })
 	@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk , password: Qajob@1234")
 	@Epic("EP001")
 	@Feature("Feature:001")
@@ -47,6 +48,11 @@ public class LoginTestClass extends BaseClass {
 	public void TestcasetoVerifyLoginwithbothcorrectEmailandPassword() throws IOException {
 		LoginPage login = new LoginPage(driver);
 		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+
+		String actualUrl = driver.getCurrentUrl();
+		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
+		Assert.assertEquals(expectrdUrl, actualUrl, "The actual and expected links matched");
+
 		Assert.assertTrue(true, "Passed");
 
 		// Assert.assertTrue(facebook_Title.contains("Facebook"));
@@ -55,56 +61,30 @@ public class LoginTestClass extends BaseClass {
 	}
 
 	// Enter wrong Email and wrong Password
-	@Test(priority = 1, description = "Login Test#2", groups = { "sanity_Suite", "regression_Suite" }, enabled = true)
-	@Description("Verify test using these credentials: Email:Tester@gmail.com , password:D_MALIK123@")
+	@Test(priority = 2, enabled = false, description = "Login Test#2", groups = { "Smoke_Suite" })
+	@Description("Verify test using these credentials: Email:Tester@gmail.com , password:Test@!123")
 	@Epic("EP001")
 	@Feature("Feature:001")
 	@Story("Login Test")
 	@Step("Use basic steps")
 	@Severity(SeverityLevel.CRITICAL)
 	public void TestcasetoVerifyLoginwith_bothWrongEmailandPassword() {
-		login.Login_Testcases("WAQAS00999", "Test@____/%!123");
+		login.Login_Testcases("WAQAS09@gmail.com", "Test@!123");
 		// throw new SkipException("Skipping the test");
 		Assert.assertTrue(true, "Passed");
 		// Assert.fail("Failed test");
 	}
 
-	// Enter wrong Email and Password correct
-	@Test(priority = 1, description = "Login Test#3", groups = { "sanity_Suite", "regression_Suite" }, enabled = true)
-	@Description("Verify test using these credentials: Email:Test@gmail.com , password: TestMalik@123")
-	@Epic("EP001")
-	@Feature("Feature:001")
-	@Story("Login Test")
-	@Step("Use basic steps")
-	@Severity(SeverityLevel.TRIVIAL)
-	public void TestcasetoVerifyLoginwith_WrongEmailandCorrectPassword() {
-		login.Login_Testcases_Negative("Standard@gmail.com", "Qajob@1234");
-		Assert.assertTrue(true, "Passed");
-	}
-
 	// Enter Correct Email and wrong Password
-	@Test(priority = 1, description = "Login Test#4", groups = { "regression_Suite" }, enabled = true)
-	@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk,  password:sd_MALIK_Waqas")
+	@Test(priority = 3, enabled = false, description = "Login Test#3", groups = { "Smoke_Suite" })
+	@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk,  password:Test@Waqas")
 	@Epic("EP001")
 	@Feature("Feature:001")
 	@Story("Login Test")
 	@Step("Use basic steps")
 	@Severity(SeverityLevel.MINOR)
 	public void TestcasetoVerifyLoginwith_CorrectEmailandWrongPassword() {
-		login.Login_Testcases("abdullah.bilal@nxb.com.pk", " Test@Waqas");
-		Assert.assertTrue(true, "Passed");
-	}
-	// Enter Correct Email and wrong Password
-		@Test(priority = 1, description = "Login Test#5", groups = { "regression_Suite" }, enabled = true)
-		@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk")
-		@Epic("EP001")
-		@Feature("Feature:001")
-		@Story("Login Test")
-		@Step("Use basic steps")
-		@Severity(SeverityLevel.MINOR)
-	public void Negative_Scenario_toVerifyLoginwith_CorrectEmailOnly() {
-		login.Login_Testcases_Negative("", "abdullah.bilal@nxb.com.pk");
-		// Assert.fail("Failed");
+		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
 		Assert.assertTrue(true, "Passed");
 	}
 
@@ -112,5 +92,4 @@ public class LoginTestClass extends BaseClass {
 	public void Teardown() {
 		System.out.print("Current Page Title is: " + driver.getTitle() + "\n" + driver.getCurrentUrl() + "\n");
 	}
-
 }

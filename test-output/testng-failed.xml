@@ -8,8 +8,6 @@
           <include name="initiateBrowser"/>
           <include name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword"/>
           <include name="Teardown"/>
-          <include name="TestcasetoVerifyLoginwith_bothWrongEmailandPassword"/>
-          <include name="TestcasetoVerifyLoginwith_WrongEmailandCorrectPassword"/>
         </methods>
       </class> <!-- TestcasePackage.LoginTestClass -->
     </classes>

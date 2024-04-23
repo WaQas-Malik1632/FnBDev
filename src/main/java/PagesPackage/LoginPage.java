@@ -36,7 +36,7 @@ public class LoginPage {
 	
 
 		String actualUrl = driver.getCurrentUrl();
-		String expectrdUrl = "https://fnbdev.vteamslabs.com/login";
+		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
 
 		boolean cond = false;
 		if (actualUrl.equalsIgnoreCase(expectrdUrl)) {
