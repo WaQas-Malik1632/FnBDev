@@ -21,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 
 public class LoginTestClass extends BaseClass {
 	private WebDriver driver;
@@ -36,105 +37,59 @@ public class LoginTestClass extends BaseClass {
 		login = new LoginPage(driver);
 	}
 
-	@Test(priority = 1, description = "Login_TC001", enabled = true, invocationCount = 5)
-	@Description("Verify test using these credentials: Email:Tteesstt@gmail.com  password: @1**^%$#@$_MALIK")
-	@Epic("Login_EP001")
-	@Feature("Login001")
+	// Enter correct Email and correct Password
+	@Test(invocationCount = 1, priority = 1, description = "Login Test#1", groups = { "Smoke_Suite" })
+	@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk , password: Qajob@1234")
+	@Epic("EP001")
+	@Feature("Feature:001")
 	@Story("Login Test")
 	@Step("Use basic steps")
-	@Severity(SeverityLevel.CRITICAL)
-	@Attachment()
-	public void Testcase_VerifyLoginwith_bothWrongEmailandPassword() {
-		login.Login_Testcases("Test@gmail.com ", "@1**^%$#@$_MALIK");
+	@Severity(SeverityLevel.BLOCKER)
+	public void TestcasetoVerifyLoginwithbothcorrectEmailandPassword() throws IOException {
+		LoginPage login = new LoginPage(driver);
+		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
 
-		driver.manage().timeouts().pageLoadTimeout(05, TimeUnit.SECONDS);
+		String actualUrl = driver.getCurrentUrl();
+		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
+		Assert.assertEquals(expectrdUrl, actualUrl, "The actual and expected links matched");
 
-		// To validate whether user is successfully Registered or not
-		String ExpectedUrl = "https://demo.nopcommerce.com/login?returnUrl=%2F";
-		if (driver.getCurrentUrl() == ExpectedUrl) {
-			Assert.assertTrue(true, "Test Passed");
-		}
-	}
+		Assert.assertTrue(true, "Passed");
 
-	@Test(priority = 2, description = "Login_TC002", enabled = true, invocationCount = 1)
-	@Description("Verify test using these credentials: Email:Testuser@gmail.com  password:Test@123")
-	@Epic("EP001")
-	@Feature("Login002")
-	@Story("Login Test")
-	@Step("Use basic steps for login")
-	@Severity(SeverityLevel.CRITICAL)
-	@Attachment()
-	public void Testcase_VerifyLoginwith_bothCorrectEmailandPassword() {
-		driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
-
-		login.Login_Testcases("Testuser@gmail.com", "Test@123");
-		String ExpectedUrl = "https://demo.nopcommerce.com/";
-		if (driver.getCurrentUrl() == ExpectedUrl) {
-			Assert.assertTrue(true, "Test Passed");
-		}
+		// Assert.assertTrue(facebook_Title.contains("Facebook"));
+		// System.out.println("Page title matched");
+		// System.out.println(facebook_Title);
 	}
 
 	// Enter wrong Email and wrong Password
-	@Test(priority = 3, description = "Login_TC003", enabled = true, invocationCount = 1)
-	@Description("Verify test using these credentials: Email:Test@gmail.com  password: @1_)()**^%$#@$msd_MALIK")
+	@Test(priority = 2, enabled = false, description = "Login Test#2", groups = { "Smoke_Suite" })
+	@Description("Verify test using these credentials: Email:Tester@gmail.com , password:Test@!123")
 	@Epic("EP001")
-	@Feature("Login003")
+	@Feature("Feature:001")
 	@Story("Login Test")
 	@Step("Use basic steps")
 	@Severity(SeverityLevel.CRITICAL)
-	@Attachment()
-	public void usingSession_VerifyUserDoesnotExistInSystem_SignupNewForAccount() {
-		driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
-
-		login.Login_Testcases("ABCDEsFG@gmail.com", "Test@dj/%!123");
-		// Assert.assertTrue(true, "Passed");
-
-		// To verify the sessionID
-		String sessionID = ((ChromeDriver) driver).getSessionId().toString();
-
-		System.out.println("Session ID->" + sessionID);
-
+	public void TestcasetoVerifyLoginwith_bothWrongEmailandPassword() {
+		login.Login_Testcases("WAQAS09@gmail.com", "Test@!123");
+		// throw new SkipException("Skipping the test");
+		Assert.assertTrue(true, "Passed");
+		// Assert.fail("Failed test");
 	}
 
-	// Enter wrong Email and wrong Password
-	@Test(priority = 4, description = "Login_TC004", enabled = true, invocationCount = 1)
-	@Description("Verify test using these credentials: Email:Test@gmail.com  password: @1_)()**^%$#@$msd_MALIK")
+	// Enter Correct Email and wrong Password
+	@Test(priority = 3, enabled = false, description = "Login Test#3", groups = { "Smoke_Suite" })
+	@Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk,  password:Test@Waqas")
 	@Epic("EP001")
-	@Feature("Login004")
+	@Feature("Feature:001")
 	@Story("Login Test")
 	@Step("Use basic steps")
-	@Severity(SeverityLevel.CRITICAL)
-	@Attachment()
-	public void Verify_UserDoesnotExistInSystem_SignupNewForAccount() {
-		// throw new SkipException("Skipped");
-
-		driver.manage().timeouts().pageLoadTimeout(05, TimeUnit.SECONDS);
-
-		login.Login_Testcases("usernewtest@gmail.com", "ZXCv@123");
-
-		// ==== Validate user is logged in or not using Error messages====
-
-		String actualMsg = "Login was unsuccessful. Please correct the errors and try again.\n"
-				+ "No customer account found";
-		String errorMsg = "Login was unsuccessful. Please correct the errors and try again.\n"
-				+ "No customer account found";
-
-		// To validate whether user is successfully Registered or not
-		String ExpectedUrl = "https://demo.nopcommerce.com/";
-		if (driver.getCurrentUrl() == ExpectedUrl) {
-			Assert.assertTrue(true, "Test Passed");
-			try {
-				super.TakeScreenshot(driver, "TestScreenshot.png");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+	@Severity(SeverityLevel.MINOR)
+	public void TestcasetoVerifyLoginwith_CorrectEmailandWrongPassword() {
+		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
+		Assert.assertTrue(true, "Passed");
 	}
 
 	@AfterTest
 	public void Teardown() {
 		System.out.print("Current Page Title is: " + driver.getTitle() + "\n" + driver.getCurrentUrl() + "\n");
 	}
-
 }

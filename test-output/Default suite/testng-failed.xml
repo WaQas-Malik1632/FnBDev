@@ -5,12 +5,9 @@
     <classes>
       <class name="TestcasePackage.LoginTestClass">
         <methods>
-          <include name="Testcase_VerifyLoginwith_bothCorrectEmailandPassword"/>
-          <include name="Testcase_VerifyLoginwith_bothWrongEmailandPassword"/>
           <include name="initiateBrowser"/>
-          <include name="Verify_UserDoesnotExistInSystem_SignupNewForAccount"/>
+          <include name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword"/>
           <include name="Teardown"/>
-          <include name="usingSession_VerifyUserDoesnotExistInSystem_SignupNewForAccount"/>
         </methods>
       </class> <!-- TestcasePackage.LoginTestClass -->
     </classes>
