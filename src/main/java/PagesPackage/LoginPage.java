@@ -1,5 +1,4 @@
 package PagesPackage;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -25,12 +24,16 @@ public class LoginPage {
 	public void Login_Testcases(String Uname, String Pass) {
 	
 		WebElement u1 = driver.findElement(txt_email);
+		System.out.println("->Email field found and entering Email");
 		u1.sendKeys(Uname);
-
+		
+		driver.manage().timeouts().pageLoadTimeout(03,TimeUnit.SECONDS);
+		
 		WebElement p1 = driver.findElement(txt_password);
+		System.out.println("->Password field found and entering Password");
 		p1.sendKeys(Pass);
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // page load
+		driver.manage().timeouts().pageLoadTimeout(05,TimeUnit.SECONDS); // page load
 
 		WebElement b1 = driver.findElement(btn_Continue);
 		b1.click();

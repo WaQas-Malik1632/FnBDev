@@ -49,19 +49,35 @@ public class LoginTestClass extends BaseClass {
 		LoginPage login = new LoginPage(driver);
 		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
 
-		String actualUrl = driver.getCurrentUrl();
-		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
+		//Verify test with the Page Url
+		   String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
+		   String actualUrl = driver.getCurrentUrl();
+		 
+		  System.out.println("Verifying the page url has started");
+		  
+		  System.out.println("Actual URL: " + actualUrl);
+		  System.out.println("Expected URL: " + expectedUrl);
+		  
+		  
+		  Assert.assertEquals(actualUrl,expectedUrl,"Page Url matched");
+		 
+		  System.out.println("The page Url has been successfully verified");
+		 
+		 System.out.println("User logged in successfully");
 
-		if(actualUrl==expectrdUrl) {
-			System.out.println("Login: User has been logged in successfully");
-		}
-		else
-		{
-			System.out.println("User didn't login");
-		}
-
-		// Assert.assertTrue(facebook_Title.contains("Facebook"));
-		// System.out.println("Page title matched");
+		
+		//Verify test with the Page Title
+	/*	String title = "F&B System";
+		 
+        String actualTitle = driver.getTitle();
+ 
+        System.out.println("Verifying the page title has started");
+        Assert.assertEquals(actualTitle,title,"Page title doesn't match");
+ 
+        System.out.println("The page title has been successfully verified");
+ 
+        System.out.println("User logged in successfully");
+        */
 
 	}
 
@@ -91,6 +107,9 @@ public class LoginTestClass extends BaseClass {
 	public void TestcasetoVerifyLoginwith_CorrectEmailandWrongPassword() {
 		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
 		Assert.assertTrue(true, "Passed");
+		// Assert.assertTrue(facebook_Title.contains("Facebook"));
+		// System.out.println("Page title matched");
+				
 	}
 
 	@AfterTest
