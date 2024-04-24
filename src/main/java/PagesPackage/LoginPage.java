@@ -36,7 +36,6 @@ public class LoginPage {
 
 		WebElement b1 = driver.findElement(btn_Continue);
 		b1.click();
-
 	}
 
 	public void TakeScreenshot(WebDriver webdriver, String DestFile) throws IOException {

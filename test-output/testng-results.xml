@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-24T23:10:31 PKT" name="Default suite" finished-at="2024-04-24T23:10:50 PKT" duration-ms="18587">
+  <suite started-at="2024-04-25T01:26:58 PKT" name="Default suite" finished-at="2024-04-25T01:27:22 PKT" duration-ms="24000">
     <groups>
       <group name="Smoke_Suite">
-        <method signature="LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@42463763]" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" class="TestcasePackage.LoginTestClass"/>
+        <method signature="LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@f316aeb]" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" class="TestcasePackage.LoginTestClass"/>
       </group> <!-- Smoke_Suite -->
     </groups>
-    <test started-at="2024-04-24T23:10:31 PKT" name="Default test" finished-at="2024-04-24T23:10:50 PKT" duration-ms="18587">
+    <test started-at="2024-04-25T01:26:58 PKT" name="Default test" finished-at="2024-04-25T01:27:22 PKT" duration-ms="24000">
       <class name="TestcasePackage.LoginTestClass">
-        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:31 PKT" name="initiateBrowser" finished-at="2024-04-24T23:10:48 PKT" duration-ms="16037" status="PASS">
+        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@f316aeb]" started-at="2024-04-25T01:26:58 PKT" name="initiateBrowser" finished-at="2024-04-25T01:27:19 PKT" duration-ms="20922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateBrowser -->
-        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:48 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-24T23:10:50 PKT" duration-ms="1884" status="PASS">
+        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@f316aeb]" started-at="2024-04-25T01:27:19 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-25T01:27:22 PKT" duration-ms="2364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestcasetoVerifyLoginwithbothcorrectEmailandPassword -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:50 PKT" name="Teardown" finished-at="2024-04-24T23:10:50 PKT" duration-ms="19" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@f316aeb]" started-at="2024-04-25T01:27:22 PKT" name="Teardown" finished-at="2024-04-25T01:27:22 PKT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
