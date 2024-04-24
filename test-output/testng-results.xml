@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-24T13:25:16 PKT" name="Default suite" finished-at="2024-04-24T13:25:19 PKT" duration-ms="2355">
+  <suite started-at="2024-04-24T13:30:01 PKT" name="Default suite" finished-at="2024-04-24T13:30:07 PKT" duration-ms="5741">
     <groups>
       <group name="Smoke_Suite">
         <method signature="LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@767e20cf]" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" class="TestcasePackage.LoginTestClass"/>
       </group> <!-- Smoke_Suite -->
     </groups>
-    <test started-at="2024-04-24T13:25:16 PKT" name="Default test" finished-at="2024-04-24T13:25:19 PKT" duration-ms="2355">
+    <test started-at="2024-04-24T13:30:01 PKT" name="Default test" finished-at="2024-04-24T13:30:07 PKT" duration-ms="5741">
       <class name="TestcasePackage.LoginTestClass">
-        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:25:17 PKT" name="initiateBrowser" finished-at="2024-04-24T13:25:19 PKT" duration-ms="2146" status="FAIL">
+        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:30:02 PKT" name="initiateBrowser" finished-at="2024-04-24T13:30:07 PKT" duration-ms="4858" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[session not created: This version of ChromeDriver only supports Chrome version 114
@@ -128,7 +128,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateBrowser -->
-        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:25:19 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-24T13:25:19 PKT" duration-ms="0" status="SKIP">
+        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:30:07 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-24T13:30:07 PKT" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[session not created: This version of ChromeDriver only supports Chrome version 114
@@ -246,7 +246,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestcasetoVerifyLoginwithbothcorrectEmailandPassword -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:25:19 PKT" name="Teardown" finished-at="2024-04-24T13:25:19 PKT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T13:30:07 PKT" name="Teardown" finished-at="2024-04-24T13:30:07 PKT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
