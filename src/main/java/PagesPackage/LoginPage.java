@@ -22,39 +22,10 @@ public class LoginPage {
 		this.driver = driver;
 	}
 
-	public boolean Login_Testcases_Negative(String Uname, String Pass) {
-		WebElement u1 = driver.findElement(txt_email);
-		u1.sendKeys(Uname);
-
-		WebElement p1 = driver.findElement(txt_password);
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // page load
-
-		WebElement b1 = driver.findElement(btn_Continue);
-		b1.click();
-
+	public void Login_Testcases(String Uname, String Pass) {
 	
-
-		String actualUrl = driver.getCurrentUrl();
-		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
-
-		boolean cond = false;
-		if (actualUrl.equalsIgnoreCase(expectrdUrl)) {
-			cond = true;
-		}
-
-		else
-			cond = false;
-
-		return cond;
-		
-	}
-
-	public boolean Login_Testcases(String Uname, String Pass) {
 		WebElement u1 = driver.findElement(txt_email);
 		u1.sendKeys(Uname);
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		WebElement p1 = driver.findElement(txt_password);
 		p1.sendKeys(Pass);
@@ -64,21 +35,6 @@ public class LoginPage {
 		WebElement b1 = driver.findElement(btn_Continue);
 		b1.click();
 
-		u1.clear();
-		p1.clear();
-
-		String actualUrl = driver.getCurrentUrl();
-		String expectrdUrl = "https://fnbdev.vteamslabs.com/dashboard";
-
-		boolean cond = false;
-		if (actualUrl.equalsIgnoreCase(expectrdUrl)) {
-			cond = true;
-		}
-
-		else
-			cond = false;
-
-		return cond;
 	}
 
 	public void TakeScreenshot(WebDriver webdriver, String DestFile) throws IOException {
