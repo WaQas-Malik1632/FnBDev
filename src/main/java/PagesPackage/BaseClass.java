@@ -31,10 +31,10 @@ public class BaseClass {
 	String formattedDate = date.format(myFormatObj);
 
 	public WebDriver Setup_Browser() {
-	//	WebDriverManager.chromedriver().setup();
-	//	ChromeDriver driver=new ChromeDriver();
-		WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+	//	WebDriverManager.firefoxdriver().setup();
+	//	driver = new FirefoxDriver();
 		driver.get(Url);
 		String title = driver.getTitle();
 		System.out.println("Title: " + title);

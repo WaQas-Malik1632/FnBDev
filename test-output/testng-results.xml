@@ -1,65 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-24T20:25:23 PKT" name="Default suite" finished-at="2024-04-24T20:25:34 PKT" duration-ms="11364">
+  <suite started-at="2024-04-24T23:10:31 PKT" name="Default suite" finished-at="2024-04-24T23:10:50 PKT" duration-ms="18587">
     <groups>
       <group name="Smoke_Suite">
-        <method signature="LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@767e20cf]" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" class="TestcasePackage.LoginTestClass"/>
+        <method signature="LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@42463763]" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" class="TestcasePackage.LoginTestClass"/>
       </group> <!-- Smoke_Suite -->
     </groups>
-    <test started-at="2024-04-24T20:25:23 PKT" name="Default test" finished-at="2024-04-24T20:25:34 PKT" duration-ms="11364">
+    <test started-at="2024-04-24T23:10:31 PKT" name="Default test" finished-at="2024-04-24T23:10:50 PKT" duration-ms="18587">
       <class name="TestcasePackage.LoginTestClass">
-        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T20:25:23 PKT" name="initiateBrowser" finished-at="2024-04-24T20:25:34 PKT" duration-ms="10677" status="PASS">
+        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:31 PKT" name="initiateBrowser" finished-at="2024-04-24T23:10:48 PKT" duration-ms="16037" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateBrowser -->
-        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T20:25:34 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-24T20:25:34 PKT" duration-ms="477" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Page Url matched expected [https://fnbdev.vteamslabs.com/dashboard] but found [https://fnbdev.vteamslabs.com/login]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Page Url matched expected [https://fnbdev.vteamslabs.com/dashboard] but found [https://fnbdev.vteamslabs.com/login]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at TestcasePackage.LoginTestClass.TestcasetoVerifyLoginwithbothcorrectEmailandPassword(LoginTestClass.java:62)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="TestcasetoVerifyLoginwithbothcorrectEmailandPassword()[pri:1, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:48 PKT" name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword" description="Login Test#1" finished-at="2024-04-24T23:10:50 PKT" duration-ms="1884" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestcasetoVerifyLoginwithbothcorrectEmailandPassword -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@767e20cf]" started-at="2024-04-24T20:25:34 PKT" name="Teardown" finished-at="2024-04-24T20:25:34 PKT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:TestcasePackage.LoginTestClass@42463763]" started-at="2024-04-24T23:10:50 PKT" name="Teardown" finished-at="2024-04-24T23:10:50 PKT" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->

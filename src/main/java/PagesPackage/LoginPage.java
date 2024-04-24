@@ -20,7 +20,6 @@ public class LoginPage {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
-
 	public void Login_Testcases(String Uname, String Pass) {
 	
 		WebElement u1 = driver.findElement(txt_email);
@@ -46,5 +45,4 @@ public class LoginPage {
 		// FileUtils.copyFile(srcfile, new File(".//screenshot//djkjfs.png"));
 		FileUtils.copyFile(srcfile, new File(DestFile));
 	}
-
 }
