@@ -6,7 +6,6 @@
 	<groupId>FnBDev01</groupId>
 	<artifactId>FnBDev</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>FnBDev</name>
 	<url>http://maven.apache.org</url>
@@ -128,12 +127,6 @@
 			<artifactId>testng</artifactId>
 			<version>7.8.0</version>
 			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>TestMaven_Project</groupId>
-			<artifactId>TestMaven_Project01</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>

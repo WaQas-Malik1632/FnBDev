@@ -1,6 +1,7 @@
 package ListenerPackage;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -9,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import Pages_Package.BaseClass;
+import PagesPackage.BaseClass;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 
@@ -28,7 +29,12 @@ public class AllureListener implements ITestListener {
 		// Allure ScreenShot
 		BaseClass takeSS = new BaseClass();
 		webdriver = takeSS.Setup_Browser();
-		webdriver = takeSS.TakeScreenshot(driver, "TestScreen");
+		try {
+			webdriver = takeSS.TakeScreenshot(driver, "TestScreen");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		Allure.addAttachment("FailedTestCase_screenshot",
 				new ByteArrayInputStream(((TakesScreenshot) webdriver).getScreenshotAs(OutputType.BYTES)));

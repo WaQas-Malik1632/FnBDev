@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import Pages_Package.BaseClass;
+import PagesPackage.BaseClass;
 import io.qameta.allure.Allure;
 
 public class ListenersTestNG implements ITestListener {
