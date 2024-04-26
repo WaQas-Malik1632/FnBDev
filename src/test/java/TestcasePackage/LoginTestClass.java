@@ -1,4 +1,5 @@
 package TestcasePackage;
+
 import org.testng.annotations.Test;
 import PagesPackage.BaseClass;
 import PagesPackage.LoginPage;
@@ -11,6 +12,7 @@ import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeTest;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,8 +43,22 @@ public class LoginTestClass extends BaseClass {
 	@Step("Use basic steps")
 	@Severity(SeverityLevel.BLOCKER)
 	public void TestcasetoVerifyLoginwithbothcorrectEmailandPassword() throws IOException {
-		LoginPage login = new LoginPage(driver);
-		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+
+		// Verify login with Take input from user
+		Scanner sc = new Scanner(System.in);
+		
+		// Type your Email address
+		System.out.println("\n" + "Enter your Email:");
+		String Email = sc.nextLine();
+
+		// Type your Password
+		System.out.println("\n" + "Enter your Password:");
+		String Pass = sc.nextLine();
+
+		login.Login_Testcases(Email, Pass);
+
+		// Verify login with static values
+//		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
 
 		// Verify test with the Page Url
 		String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
@@ -59,14 +75,13 @@ public class LoginTestClass extends BaseClass {
 
 		// Verify test with the Page Title
 		/*
-		 String title = "F&B System"; 
-		 String actualTitle = driver.getTitle();
-		  
-		 System.out.println("Verifying the page title has started");
-		 Assert.assertEquals(actualTitle,title,"Page title doesn't match");
-		  
-		 System.out.println("The page title has been successfully verified"); 
-		  System.out.println("User logged in successfully");
+		 * String title = "F&B System"; String actualTitle = driver.getTitle();
+		 * 
+		 * System.out.println("Verifying the page title has started");
+		 * Assert.assertEquals(actualTitle,title,"Page title doesn't match");
+		 * 
+		 * System.out.println("The page title has been successfully verified");
+		 * System.out.println("User logged in successfully");
 		 */
 	}
 
@@ -100,8 +115,10 @@ public class LoginTestClass extends BaseClass {
 		// System.out.println("Page title matched");
 
 	}
+
 	@AfterTest
 	public void Teardown() {
-		// System.out.print("Current Page Title is: " + driver.getTitle() + "\n" + driver.getCurrentUrl() + "\n");
+		// System.out.print("Current Page Title is: " + driver.getTitle() + "\n" +
+		// driver.getCurrentUrl() + "\n");
 	}
 }
