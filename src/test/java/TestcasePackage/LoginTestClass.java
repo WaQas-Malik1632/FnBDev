@@ -1,6 +1,5 @@
 package TestcasePackage;
 
-import org.bouncycastle.crypto.generators.KDF1BytesGenerator;
 import org.testng.annotations.Test;
 import PagesPackage.BaseClass;
 import PagesPackage.LoginPage;
@@ -12,16 +11,11 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeTest;
-
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 
 public class LoginTestClass extends BaseClass {
 
@@ -47,7 +41,7 @@ public class LoginTestClass extends BaseClass {
     @Severity(SeverityLevel.BLOCKER)
     public void TestcasetoVerifyLoginwithbothcorrectEmailandPassword() throws IOException {
         // Verify login with Take input from user
-        Scanner sc = new Scanner(System.in);
+     /*   Scanner sc = new Scanner(System.in);
         // Type your Email address
         System.out.println("\n" + "Enter your Email:");
         String Email = sc.nextLine();
@@ -55,8 +49,10 @@ public class LoginTestClass extends BaseClass {
         System.out.println("\n" + "Enter your Password:");
         String Pass = sc.nextLine();
         login.Login_Testcases(Email, Pass);
+
+      */
         // Verify login with static values
-        // Login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+        login.Login_Testcases("abdullah.bilal@nxb.com.pk","Qajob@1234");
         // Verify test with the Page Url
         String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
         String actualUrl = driver.getCurrentUrl();
