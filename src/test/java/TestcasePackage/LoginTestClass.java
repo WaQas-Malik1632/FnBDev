@@ -61,7 +61,7 @@ public class LoginTestClass extends BaseClass {
             Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
         }
         System.out.println("The page Url has been successfully verified");
-        System.out.println("User logged in successfully");
+        System.out.println("User logged in successfully"+"\n");
         // Verify test with the Page Title
 		/*
 		  String title = "F&B System"; String actualTitle = driver.getTitle();

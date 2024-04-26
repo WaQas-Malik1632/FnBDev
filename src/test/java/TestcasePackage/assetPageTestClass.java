@@ -20,39 +20,47 @@ import org.testng.annotations.AfterTest;
 
 public class assetPageTestClass extends BaseClass {
 
-	private WebDriver driver;
-	private LoginPage login;
-	private assetPageClass asset;
+    private WebDriver driver;
+    private LoginPage login;
+    private assetPageClass asset;
 
-	@BeforeTest
-	public void initiateBrowser() {
+    @BeforeTest
+    public void initiateBrowser() {
 
-		driver = super.Setup_Browser();
-		// driver = super.SetupCrossBrowser();
-		// driver=super.Setup_HeadlessBrowser();
-		login = new LoginPage(driver);
-		asset = new assetPageClass(driver);
-	}
+        driver = super.Setup_Browser();
+        // driver = super.SetupCrossBrowser();
+        // driver=super.Setup_HeadlessBrowser();
+        login = new LoginPage(driver);
+        asset = new assetPageClass(driver);
+    }
 
-	// Add asset
-	@Test(priority = 2, enabled = true, description = "Login Test#2", groups = { "Smoke_Suite" })
-	@Description("Verify that user is able to add Asset successfully after login")
-	@Epic("EP001")
-	@Feature("Feature:001")
-	@Story("Add Asset Test")
-	@Step("Use basic steps")
-	@Severity(SeverityLevel.CRITICAL)
-	public void addAssetToSystem() throws InterruptedException {
-		login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
-		System.out.print("User logged in successfully");
+    // Add asset
+    @Test(priority = 2, enabled = true, description = "Login Test#2", groups = {"Smoke_Suite"})
+    @Description("Verify that user is able to add Asset successfully after login")
+    @Epic("EP001")
+    @Feature("Feature:001")
+    @Story("Add Asset Test")
+    @Step("Use basic steps")
+    @Severity(SeverityLevel.CRITICAL)
+    public void addAssetToSystem() throws InterruptedException {
+        login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+        System.out.print("User logged in successfully");
 
-		asset.addAsset("101", "2", "TestProduct");
-		Assert.assertTrue(true, "Passed");
-	}
+        asset.addAsset("101", "2", "TestProduct");
 
-	@AfterTest
-	public void Teardown() {
+        String toastMessageVerify = "Please enter valid GRN number";
+        Assert.assertTrue(toastMessageVerify.contains("Please enter valid GRN number"), "Toast message validation check: " + toastMessageVerify);
 
-		// System.out.print("Current Page Title is: " + driver.getTitle() + "\n" +driver.getCurrentUrl() + "\n");
-	}
+        if (toastMessageVerify.contains("Please enter valid GRN numbers")) {
+            System.out.print("Asset didn't add to the system");
+        } else {
+            System.out.print("Asset added to the system successfully");
+        }
+    }
+
+    @AfterTest
+    public void tearDown() {
+
+        // System.out.print("Current Page Title is: " + driver.getTitle() + "\n" +driver.getCurrentUrl() + "\n");
+    }
 }
