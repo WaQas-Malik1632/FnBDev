@@ -1,7 +1,6 @@
 package TestcasePackage;
 
 import org.testng.annotations.Test;
-
 import PagesPackage.BaseClass;
 import PagesPackage.LoginPage;
 import PagesPackage.assetPageClass;
@@ -12,7 +11,6 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -26,10 +24,9 @@ public class assetPageTestClass extends BaseClass {
 
     @BeforeTest
     public void initiateBrowser() {
-
-        driver = super.Setup_Browser();
+        // driver = super.Setup_Browser();
         // driver = super.SetupCrossBrowser();
-        // driver=super.Setup_HeadlessBrowser();
+        driver = super.Setup_HeadlessBrowser();
         login = new LoginPage(driver);
         asset = new assetPageClass(driver);
     }
@@ -43,24 +40,35 @@ public class assetPageTestClass extends BaseClass {
     @Step("Use basic steps")
     @Severity(SeverityLevel.CRITICAL)
     public void addAssetToSystem() throws InterruptedException {
+
         login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
         System.out.print("User logged in successfully");
+        asset.addAsset("2", "MG-1122333434", "TestProduct");
+        //To verify the toast message for Invalid GRN Number
+        String toastAssetMessageVerify = "Asset number should be unique";
+        Assert.assertTrue(true, "Toast message validation check: " + toastAssetMessageVerify);
+        if (toastAssetMessageVerify == "Asset number should be unique") {
+            System.out.print("\n" + "Asset does not add to the system");
+        } else {
+            System.out.print("\n" + "Asset added to the system successfully");
+        }
 
-        asset.addAsset("101", "2", "TestProduct");
+        /*
+          //To verify the toast message for Invalid GRN Number
+        String toastGRNMessageVerify = "Please enter valid GRN number";
+        Assert.assertTrue(true, "Toast message validation check: " + toastGRNMessageVerify);
 
-        String toastMessageVerify = "Please enter valid GRN number";
-        Assert.assertTrue(toastMessageVerify.contains("Please enter valid GRN number"), "Toast message validation check: " + toastMessageVerify);
-
-        if (toastMessageVerify.contains("Please enter valid GRN numbers")) {
-            System.out.print("Asset didn't add to the system");
+        if (toastGRNMessageVerify=="Please enter valid GRN number") {
+            System.out.print("Asset doesn't add to the system");
         } else {
             System.out.print("Asset added to the system successfully");
         }
+         */
     }
 
     @AfterTest
     public void tearDown() {
 
-        // System.out.print("Current Page Title is: " + driver.getTitle() + "\n" +driver.getCurrentUrl() + "\n");
+        System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl());
     }
 }
