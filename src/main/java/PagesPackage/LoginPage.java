@@ -2,8 +2,6 @@ package PagesPackage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -13,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     By txt_email = By.xpath("//input[@placeholder='Email']");
     By txt_password = By.xpath("//input[@placeholder='Password']");
@@ -37,12 +35,11 @@ public class LoginPage {
         b1.click();
     }
 
-    public void TakeScreenshot(WebDriver webdriver, String DestFile) throws IOException {
+    public void TakeScreenshot(WebDriver webdriver, String destFile) throws IOException {
 
         TakesScreenshot src = ((TakesScreenshot) webdriver);
         File srcfile = src.getScreenshotAs(OutputType.FILE);
-        // FileUtils.copyFile(srcfile, new File(".//screenshot//djkjfs.png"));
-        FileUtils.copyFile(srcfile, new File(DestFile));
+        FileUtils.copyFile(srcfile, new File(".//screenshot//djkjfs.png"));
+        FileUtils.copyFile(srcfile, new File(destFile));
     }
-
 }

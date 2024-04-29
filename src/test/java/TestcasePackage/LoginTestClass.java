@@ -39,7 +39,7 @@ public class LoginTestClass extends BaseClass {
     @Story("Login Test")
     @Step("Use basic steps")
     @Severity(SeverityLevel.BLOCKER)
-    public void TestcasetoVerifyLoginwithbothcorrectEmailandPassword() throws IOException {
+    public void TestcaseToVerifyLoginWithBothCorrectEmailAndPassword() throws IOException {
         // Verify login with Take input from user
      /*   Scanner sc = new Scanner(System.in);
         // Type your Email address
@@ -82,7 +82,7 @@ public class LoginTestClass extends BaseClass {
     @Story("Login Test")
     @Step("Use basic steps")
     @Severity(SeverityLevel.CRITICAL)
-    public void TestcasetoVerifyLoginwithBothWrongEmailandPassword() {
+    public void TestcaseToVerifyLoginWithBothWrongEmailAndPassword() {
 
         login.Login_Testcases("WAQAS09@gmail.com", "Test@!123");
         // throw new SkipException("Skipping the test");
@@ -98,7 +98,7 @@ public class LoginTestClass extends BaseClass {
     @Story("Login Test")
     @Step("Use basic steps")
     @Severity(SeverityLevel.MINOR)
-    public void TestcasetoVerifyLoginwith_CorrectEmailandWrongPassword() {
+    public void TestcaseToVerifyLoginWith_CorrectEmailAndWrongPassword() {
 
         login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
         Assert.assertTrue(true, "Passed");
@@ -107,9 +107,7 @@ public class LoginTestClass extends BaseClass {
     }
 
     @AfterTest
-    public void Teardown() {
-        // System.out.print("Current Page Title is: " + driver.getTitle() + "\n" +
-        // driver.getCurrentUrl() + "\n");
+    public void tearDown() {
+         System.out.print("\n"+driver.getCurrentUrl());
     }
-
 }

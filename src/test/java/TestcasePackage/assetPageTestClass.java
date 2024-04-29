@@ -24,9 +24,9 @@ public class assetPageTestClass extends BaseClass {
 
     @BeforeTest
     public void initiateBrowser() {
-        // driver = super.Setup_Browser();
+         driver = super.Setup_Browser();
         // driver = super.SetupCrossBrowser();
-        driver = super.Setup_HeadlessBrowser();
+      //  driver = super.Setup_HeadlessBrowser();
         login = new LoginPage(driver);
         asset = new assetPageClass(driver);
     }

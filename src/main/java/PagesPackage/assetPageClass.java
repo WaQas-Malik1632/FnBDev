@@ -15,7 +15,7 @@ public class assetPageClass {
     By selectProduct = By.xpath("//select[@name='product']");
     By location = By.xpath("//select[@name='location']");
     By notes = By.xpath("//input[@placeholder='write a note']");
-    By submitbtn = By.xpath("//span[normalize-space()='Submit']");
+    By submitBtn = By.xpath("//span[normalize-space()='Submit']");
     By toastValidGRNNumber = By.xpath("//div[@role='alert']");
     By toastValidAssetNo = By.xpath("//div[@role='alert']");
 
@@ -27,33 +27,40 @@ public class assetPageClass {
     public void addAsset(String AssetNo, String GoodsReceivedNo, String Notes) throws InterruptedException {
 
         Thread.sleep(3000);
-        WebElement assetclick = driver.findElement(AssetClick);
-        assetclick.click();
+        WebElement assetClick = driver.findElement(AssetClick);
+        assetClick.click();
+
         Thread.sleep(3000);
-        WebElement addAssetBtnclick = driver.findElement(addAssetBtn);
-        addAssetBtnclick.click();
+        WebElement addAssetBtnClick = driver.findElement(addAssetBtn);
+        addAssetBtnClick.click();
+
         WebElement assetNumber = driver.findElement(assetNo);
         assetNumber.sendKeys(AssetNo);
+
         WebElement goodsReceived = driver.findElement(goodsReceivedNo);
         goodsReceived.sendKeys(GoodsReceivedNo);
+
         Thread.sleep(3000);
         Select prod = new Select(driver.findElement(selectProduct));
         prod.selectByVisibleText("Laptop");
         WebElement opt = prod.getFirstSelectedOption();
         String selectedOptionProduct = opt.getText();
         System.out.println("\n" + "Selected Product: " + selectedOptionProduct);
+
         Thread.sleep(3000);
         Select locate = new Select(driver.findElement(location));
         locate.selectByVisibleText("C1");
         WebElement S = locate.getFirstSelectedOption();
         String selectedOptionLocation = S.getText();
         System.out.println("\n" + "Selected Location: " + selectedOptionLocation);
+
         Thread.sleep(3000);
         WebElement note = driver.findElement(notes);
         note.sendKeys(Notes);
         Thread.sleep(3000);
-        WebElement submit = driver.findElement(submitbtn);
+        WebElement submit = driver.findElement(submitBtn);
         submit.click();
+
         //Check the toast message for Invalid Asset Number
         Thread.sleep(3000);
         WebElement toastAsset = driver.findElement(toastValidAssetNo);
