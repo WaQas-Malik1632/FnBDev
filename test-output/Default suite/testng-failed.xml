@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestcasePackage.LoginTestClass">
+      <class name="TestcasePackage.assetPageTestClass">
         <methods>
           <include name="initiateBrowser"/>
-          <include name="TestcasetoVerifyLoginwithbothcorrectEmailandPassword"/>
           <include name="Teardown"/>
+          <include name="addAssetToSystem"/>
         </methods>
-      </class> <!-- TestcasePackage.LoginTestClass -->
+      </class> <!-- TestcasePackage.assetPageTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

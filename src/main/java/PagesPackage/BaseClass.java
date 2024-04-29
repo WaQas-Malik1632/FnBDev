@@ -15,7 +15,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -33,6 +32,8 @@ public class BaseClass {
 	public WebDriver Setup_Browser() {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver=new ChromeDriver();
+	//	WebDriverManager.firefoxdriver().setup();
+	//	driver = new FirefoxDriver();
 		driver.get(Url);
 		String title = driver.getTitle();
 		System.out.println("Title: " + title);
@@ -80,13 +81,6 @@ public class BaseClass {
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			driver.manage().window().maximize();
-			driver.get(Url);
-			return driver;
-
-		} else if (browser.equalsIgnoreCase("Opera")) {
-			WebDriverManager.operadriver().setup();
-			driver = new OperaDriver();
 			driver.manage().window().maximize();
 			driver.get(Url);
 			return driver;
