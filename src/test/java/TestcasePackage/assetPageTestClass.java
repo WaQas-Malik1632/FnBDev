@@ -28,6 +28,8 @@ public class assetPageTestClass extends BaseClass {
         // driver = super.SetupCrossBrowser();
       //  driver = super.Setup_HeadlessBrowser();
         login = new LoginPage(driver);
+        login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+        System.out.print("User logged in successfully");
         asset = new assetPageClass(driver);
     }
 
@@ -41,8 +43,6 @@ public class assetPageTestClass extends BaseClass {
     @Severity(SeverityLevel.CRITICAL)
     public void addAssetToSystem() throws InterruptedException {
 
-        login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
-        System.out.print("User logged in successfully");
         asset.addAsset("2", "MG-1122333434", "Keyboard", "C3", "TestProduct");
         //To verify the toast message for Invalid GRN Number
         String toastAssetMessageVerify = "Asset number should be unique";
@@ -52,7 +52,6 @@ public class assetPageTestClass extends BaseClass {
         } else {
             System.out.print("\n" + "Asset added to the system successfully");
         }
-
         /*
           //To verify the toast message for Invalid GRN Number
         String toastGRNMessageVerify = "Please enter valid GRN number";
@@ -65,7 +64,6 @@ public class assetPageTestClass extends BaseClass {
         }
          */
     }
-
     @AfterTest
     public void tearDown() {
 

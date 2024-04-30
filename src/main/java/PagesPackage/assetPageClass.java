@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 public class assetPageClass {
 
     private final WebDriver driver;
-    By AssetClick = By.xpath("//img[@src='media/dashboard-icons/color/SVG/assets.svg']");
+
+    By AssetClick = By.xpath(" //*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div[2]/div[15]/a/div[1]/img");
     By addAssetBtn = By.xpath("//a[@class='btn btn-sm btn-light-primary']");
     By assetNo = By.xpath("//input[@placeholder='Asset No.']");
     By goodsReceivedNo = By.xpath("//input[@placeholder='Enter a valid GRN number']");
