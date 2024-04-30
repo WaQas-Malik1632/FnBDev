@@ -43,7 +43,7 @@ public class assetPageTestClass extends BaseClass {
 
         login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
         System.out.print("User logged in successfully");
-        asset.addAsset("2", "MG-1122333434", "TestProduct");
+        asset.addAsset("2", "MG-1122333434", "Keyboard", "C3", "TestProduct");
         //To verify the toast message for Invalid GRN Number
         String toastAssetMessageVerify = "Asset number should be unique";
         Assert.assertTrue(true, "Toast message validation check: " + toastAssetMessageVerify);
@@ -69,6 +69,6 @@ public class assetPageTestClass extends BaseClass {
     @AfterTest
     public void tearDown() {
 
-        System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl());
+        System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl()+"\n");
     }
 }

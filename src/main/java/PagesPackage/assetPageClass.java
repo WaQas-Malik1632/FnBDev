@@ -24,7 +24,7 @@ public class assetPageClass {
         this.driver = driver;
     }
 
-    public void addAsset(String AssetNo, String GoodsReceivedNo, String Notes) throws InterruptedException {
+    public void addAsset(String AssetNo, String GoodsReceivedNo, String product, String LocationName, String Notes ) throws InterruptedException {
 
         Thread.sleep(3000);
         WebElement assetClick = driver.findElement(AssetClick);
@@ -42,14 +42,14 @@ public class assetPageClass {
 
         Thread.sleep(3000);
         Select prod = new Select(driver.findElement(selectProduct));
-        prod.selectByVisibleText("Laptop");
+        prod.selectByVisibleText(product);
         WebElement opt = prod.getFirstSelectedOption();
         String selectedOptionProduct = opt.getText();
         System.out.println("\n" + "Selected Product: " + selectedOptionProduct);
 
         Thread.sleep(3000);
         Select locate = new Select(driver.findElement(location));
-        locate.selectByVisibleText("C1");
+        locate.selectByVisibleText(LocationName);
         WebElement S = locate.getFirstSelectedOption();
         String selectedOptionLocation = S.getText();
         System.out.println("\n" + "Selected Location: " + selectedOptionLocation);

@@ -6,8 +6,8 @@
       <class name="TestcasePackage.assetPageTestClass">
         <methods>
           <include name="initiateBrowser"/>
-          <include name="Teardown"/>
           <include name="addAssetToSystem"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- TestcasePackage.assetPageTestClass -->
     </classes>
