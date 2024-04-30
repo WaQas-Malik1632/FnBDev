@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestcasePackage.assetPageTestClass">
+      <class name="com.crm.qa.testcases.assetPageTestClass">
         <methods>
+          <include name="tearDown"/>
           <include name="initiateBrowser"/>
           <include name="addAssetToSystem"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- TestcasePackage.assetPageTestClass -->
+      </class> <!-- com.crm.qa.testcases.assetPageTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

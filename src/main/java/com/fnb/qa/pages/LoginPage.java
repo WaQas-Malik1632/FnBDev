@@ -1,4 +1,4 @@
-package PagesPackage;
+package com.fnb.qa.pages;
 
 import java.io.File;
 import java.io.IOException;

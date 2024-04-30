@@ -1,8 +1,10 @@
-package TestcasePackage;
+package com.crm.qa.testcases;
 
 import org.testng.annotations.Test;
-import PagesPackage.BaseClass;
-import PagesPackage.LoginPage;
+
+import com.fnb.qa.base.TestBase;
+import com.fnb.qa.pages.LoginPage;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -17,7 +19,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class LoginTestClass extends BaseClass {
+public class LoginTestClass extends TestBase {
 
     private WebDriver driver;
     private LoginPage login;

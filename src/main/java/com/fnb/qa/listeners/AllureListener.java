@@ -1,4 +1,4 @@
-package ListenerPackage;
+package com.fnb.qa.listeners;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -10,7 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import PagesPackage.BaseClass;
+import com.fnb.qa.base.TestBase;
+
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 
@@ -25,9 +26,9 @@ public class AllureListener implements ITestListener {
 	public void onTestFailure(ITestResult iTestResult) {
 		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 		Object testClass = iTestResult.getInstance();
-		WebDriver driver = BaseClass.getDriver();
+		WebDriver driver = TestBase.getDriver();
 		// Allure ScreenShot
-		BaseClass takeSS = new BaseClass();
+		TestBase takeSS = new TestBase();
 		webdriver = takeSS.Setup_Browser();
 		try {
 			webdriver = takeSS.TakeScreenshot(driver, "TestScreen");

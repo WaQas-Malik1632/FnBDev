@@ -2,19 +2,19 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-30T13:43:21 PKT" name="Default suite" finished-at="2024-04-30T13:43:37 PKT" duration-ms="15799">
+  <suite started-at="2024-04-30T20:11:56 PKT" name="Default suite" finished-at="2024-04-30T20:12:17 PKT" duration-ms="20956">
     <groups>
       <group name="Smoke_Suite">
-        <method signature="assetPageTestClass.addAssetToSystem()[pri:2, instance:TestcasePackage.assetPageTestClass@6ee6f53]" name="addAssetToSystem" class="TestcasePackage.assetPageTestClass"/>
+        <method signature="assetPageTestClass.addAssetToSystem()[pri:2, instance:com.crm.qa.testcases.assetPageTestClass@79517588]" name="addAssetToSystem" class="com.crm.qa.testcases.assetPageTestClass"/>
       </group> <!-- Smoke_Suite -->
     </groups>
-    <test started-at="2024-04-30T13:43:21 PKT" name="Default test" finished-at="2024-04-30T13:43:37 PKT" duration-ms="15799">
-      <class name="TestcasePackage.assetPageTestClass">
-        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:TestcasePackage.assetPageTestClass@6ee6f53]" started-at="2024-04-30T13:43:21 PKT" name="initiateBrowser" finished-at="2024-04-30T13:43:33 PKT" duration-ms="12139" status="PASS">
+    <test started-at="2024-04-30T20:11:56 PKT" name="Default test" finished-at="2024-04-30T20:12:17 PKT" duration-ms="20956">
+      <class name="com.crm.qa.testcases.assetPageTestClass">
+        <test-method is-config="true" signature="initiateBrowser()[pri:0, instance:com.crm.qa.testcases.assetPageTestClass@79517588]" started-at="2024-04-30T20:11:56 PKT" name="initiateBrowser" finished-at="2024-04-30T20:12:14 PKT" duration-ms="17536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateBrowser -->
-        <test-method signature="addAssetToSystem()[pri:2, instance:TestcasePackage.assetPageTestClass@6ee6f53]" started-at="2024-04-30T13:43:33 PKT" name="addAssetToSystem" description="Login Test#2" finished-at="2024-04-30T13:43:37 PKT" duration-ms="3473" status="FAIL">
+        <test-method signature="addAssetToSystem()[pri:2, instance:com.crm.qa.testcases.assetPageTestClass@79517588]" started-at="2024-04-30T20:12:14 PKT" name="addAssetToSystem" description="Login Test#2" finished-at="2024-04-30T20:12:17 PKT" duration-ms="3206" status="FAIL">
           <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
               <![CDATA[element not interactable
@@ -22,10 +22,10 @@
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ff2fabc950b792f6d65bd69d43cb6df1, clickElement {id=f.6E8D8F84390313646AEE0C4E90190FAC.d.94C469723C9FF7049790686D1049405E.e.59}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.92, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57391}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57391/devtoo..., se:cdpVersion: 124.0.6367.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ff2fabc950b792f6d65bd69d43cb6df1)] -> xpath: //img[@src='media/dashboard-icons/color/SVG/assets.svg']]
-Session ID: ff2fabc950b792f6d65bd69d43cb6df1]]>
+Command: [8f131de89aaea2bc7769f8a6e02e4744, clickElement {id=f.79F0C7FCD87CFE0E24E68EED35D25136.d.3AB730BC1012C590695414F7C9D0F448.e.63}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.92, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64041}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64041/devtoo..., se:cdpVersion: 124.0.6367.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8f131de89aaea2bc7769f8a6e02e4744)] -> xpath:  //*[@id="kt_content_container"]/section/div/div/div/div/div/div[2]/div[15]/a/div[1]/img]
+Session ID: 8f131de89aaea2bc7769f8a6e02e4744]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
@@ -33,10 +33,10 @@ Session ID: ff2fabc950b792f6d65bd69d43cb6df1]]>
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ff2fabc950b792f6d65bd69d43cb6df1, clickElement {id=f.6E8D8F84390313646AEE0C4E90190FAC.d.94C469723C9FF7049790686D1049405E.e.59}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.92, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57391}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57391/devtoo..., se:cdpVersion: 124.0.6367.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ff2fabc950b792f6d65bd69d43cb6df1)] -> xpath: //img[@src='media/dashboard-icons/color/SVG/assets.svg']]
-Session ID: ff2fabc950b792f6d65bd69d43cb6df1
+Command: [8f131de89aaea2bc7769f8a6e02e4744, clickElement {id=f.79F0C7FCD87CFE0E24E68EED35D25136.d.3AB730BC1012C590695414F7C9D0F448.e.63}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.92, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\WAQAS~1.NAS\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64041}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64041/devtoo..., se:cdpVersion: 124.0.6367.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8f131de89aaea2bc7769f8a6e02e4744)] -> xpath:  //*[@id="kt_content_container"]/section/div/div/div/div/div/div[2]/div[15]/a/div[1]/img]
+Session ID: 8f131de89aaea2bc7769f8a6e02e4744
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -49,8 +49,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at PagesPackage.assetPageClass.addAsset(assetPageClass.java:31)
-at TestcasePackage.assetPageTestClass.addAssetToSystem(assetPageTestClass.java:46)
+at com.fnb.qa.pages.assetPageClass.addAsset(assetPageClass.java:32)
+at com.crm.qa.testcases.assetPageTestClass.addAssetToSystem(assetPageTestClass.java:48)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -83,11 +83,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addAssetToSystem -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestcasePackage.assetPageTestClass@6ee6f53]" started-at="2024-04-30T13:43:37 PKT" name="tearDown" finished-at="2024-04-30T13:43:37 PKT" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testcases.assetPageTestClass@79517588]" started-at="2024-04-30T20:12:17 PKT" name="tearDown" finished-at="2024-04-30T20:12:17 PKT" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestcasePackage.assetPageTestClass -->
+      </class> <!-- com.crm.qa.testcases.assetPageTestClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,4 +1,4 @@
-package ListenerPackage;
+package com.fnb.qa.listeners;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import PagesPackage.BaseClass;
+import com.fnb.qa.base.TestBase;
+
 import io.qameta.allure.Allure;
 
 public class ListenersTestNG implements ITestListener {
@@ -22,7 +23,7 @@ public class ListenersTestNG implements ITestListener {
 	public void onTestFailure(ITestListener result) throws IOException {
 		System.out.println("----onTestFailure Method: " + ((ITestResult) result).getName() + " ----");
 		// Use this for take screenshot in the local folder
-		BaseClass takeSS = new BaseClass();
+		TestBase takeSS = new TestBase();
 		webdriver = takeSS.Setup_Browser();
 		webdriver = takeSS.TakeScreenshot(webdriver, "TestSSSS");
 		Allure.addAttachment("FailedTestCase_screenshot",
