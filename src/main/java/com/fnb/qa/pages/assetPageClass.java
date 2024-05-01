@@ -1,15 +1,18 @@
 package com.fnb.qa.pages;
 
+import java.io.IOException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import com.fnb.qa.base.TestBase;
 
-public class assetPageClass {
+public class assetPageClass extends TestBase {
 
-    private final WebDriver driver;
-
-    By AssetClick = By.xpath(" //*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div[2]/div[15]/a/div[1]/img");
+    public assetPageClass() throws IOException
+    {
+		super();
+	}
+	By AssetClick = By.xpath(" //*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div[2]/div[15]/a/div[1]/img");
     By addAssetBtn = By.xpath("//a[@class='btn btn-sm btn-light-primary']");
     By assetNo = By.xpath("//input[@placeholder='Asset No.']");
     By goodsReceivedNo = By.xpath("//input[@placeholder='Enter a valid GRN number']");
@@ -19,11 +22,6 @@ public class assetPageClass {
     By submitBtn = By.xpath("//span[normalize-space()='Submit']");
     By toastValidGRNNumber = By.xpath("//div[@role='alert']");
     By toastValidAssetNo = By.xpath("//div[@role='alert']");
-
-    public assetPageClass(WebDriver driver) {
-
-        this.driver = driver;
-    }
 
     public void addAsset(String AssetNo, String GoodsReceivedNo, String product, String LocationName, String Notes ) throws InterruptedException {
 
@@ -73,7 +71,6 @@ public class assetPageClass {
         WebElement toastGRN = driver.findElement(toastValidGRNNumber);
         String toastGRNMessage = toastGRN.getText();
         System.out.println("\n" + "Check Toast Message for Invalid GRN Number: " + toastGRNMessage);
-
  */
     }
 }

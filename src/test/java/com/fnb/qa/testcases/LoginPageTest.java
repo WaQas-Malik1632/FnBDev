@@ -1,10 +1,8 @@
-package com.crm.qa.testcases;
+package com.fnb.qa.testcases;
 
 import org.testng.annotations.Test;
-
 import com.fnb.qa.base.TestBase;
 import com.fnb.qa.pages.LoginPage;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -14,23 +12,21 @@ import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeTest;
 import java.io.IOException;
-import java.util.Scanner;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class LoginTestClass extends TestBase {
+public class LoginPageTest extends TestBase {
+	LoginPage login;
 
-    private WebDriver driver;
-    private LoginPage login;
+	public LoginPageTest() throws IOException {
+		super();
+	}
 
     @BeforeTest
-    public void initiateBrowser() {
+    public void setUp() throws IOException {
 
-        driver = super.Setup_Browser();
-        // driver = super.SetupCrossBrowser();
-        // driver=super.Setup_HeadlessBrowser();
-        login = new LoginPage(driver);
+        intialization();
+		login = new LoginPage();
     }
 
     // Enter correct Email and correct Password
@@ -42,7 +38,7 @@ public class LoginTestClass extends TestBase {
     @Step("Use basic steps")
     @Severity(SeverityLevel.BLOCKER)
     public void TestcaseToVerifyLoginWithBothCorrectEmailAndPassword() throws IOException {
-        // Verify login with Take input from user
+        // ================Verify login with Take input from user====================
      /*   Scanner sc = new Scanner(System.in);
         // Type your Email address
         System.out.println("\n" + "Enter your Email:");
@@ -54,17 +50,23 @@ public class LoginTestClass extends TestBase {
 
       */
         // Verify login with static values
-        login.Login_Testcases("abdullah.bilal@nxb.com.pk","Qajob@1234");
-        // Verify test with the Page Url
+    //	 login.Login_Testcases("username", "password");
+    	
+    	//Both ways are same 
+    //	 login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
+         login.Login_Testcases(prop.getProperty("username"),"password");
+    	
+        //================Verify test with the Page Url===========================
         String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
         String actualUrl = driver.getCurrentUrl();
         System.out.println("Verifying the page url has started");
         if (actualUrl == expectedUrl) {
             Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
         }
-        System.out.println("The page Url has been successfully verified");
+        System.out.println("->The page Url has been successfully verified");
         System.out.println("User logged in successfully"+"\n");
-        // Verify test with the Page Title
+        
+        // ==================Verify test with the Page Title=======================
 		/*
 		  String title = "F&B System"; String actualTitle = driver.getTitle();
 		  
@@ -76,24 +78,8 @@ public class LoginTestClass extends TestBase {
 		 */
     }
 
-    // Enter wrong Email and wrong Password, Skip this test
-    @Test(priority = 2, enabled = false, description = "Login Test#2", groups = {"Smoke_Suite"})
-    @Description("Verify test using these credentials: Email:Tester@gmail.com , password:Test@!123")
-    @Epic("EP001")
-    @Feature("Feature:001")
-    @Story("Login Test")
-    @Step("Use basic steps")
-    @Severity(SeverityLevel.CRITICAL)
-    public void TestcaseToVerifyLoginWithBothWrongEmailAndPassword() {
-
-        login.Login_Testcases("WAQAS09@gmail.com", "Test@!123");
-        // throw new SkipException("Skipping the test");
-        Assert.assertTrue(true, "Passed");
-        // Assert.fail("Failed test");
-    }
-
     // Enter Correct Email and wrong Password
-    @Test(priority = 3, enabled = false, description = "Login Test#3", groups = {"Smoke_Suite"})
+    @Test(priority = 2, enabled = false, description = "Login Test#2", groups = {"Smoke_Suite"})
     @Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk,  password:Test@Waqas")
     @Epic("EP001")
     @Feature("Feature:001")
@@ -102,7 +88,7 @@ public class LoginTestClass extends TestBase {
     @Severity(SeverityLevel.MINOR)
     public void TestcaseToVerifyLoginWith_CorrectEmailAndWrongPassword() {
 
-        login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
+       // login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
         Assert.assertTrue(true, "Passed");
         // Assert.assertTrue(facebook_Title.contains("Facebook"));
         // System.out.println("Page title matched");

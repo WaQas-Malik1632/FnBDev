@@ -26,16 +26,8 @@ public class AllureListener implements ITestListener {
 	public void onTestFailure(ITestResult iTestResult) {
 		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 		Object testClass = iTestResult.getInstance();
-		WebDriver driver = TestBase.getDriver();
 		// Allure ScreenShot
-		TestBase takeSS = new TestBase();
-		webdriver = takeSS.Setup_Browser();
-		try {
-			webdriver = takeSS.TakeScreenshot(driver, "TestScreen");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 
 		Allure.addAttachment("FailedTestCase_screenshot",
 				new ByteArrayInputStream(((TakesScreenshot) webdriver).getScreenshotAs(OutputType.BYTES)));

@@ -1,11 +1,9 @@
-package com.crm.qa.testcases;
+package com.fnb.qa.testcases;
 
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
 import com.fnb.qa.base.TestBase;
 import com.fnb.qa.pages.LoginPage;
 import com.fnb.qa.pages.assetPageClass;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -13,26 +11,26 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-import org.testng.annotations.BeforeTest;
-import org.openqa.selenium.WebDriver;
+
+import java.io.IOException;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 
 public class assetPageTestClass extends TestBase {
+	
+	 	 LoginPage login;
+	     assetPageClass asset;
 
-    private WebDriver driver;
-    private LoginPage login;
-    private assetPageClass asset;
+    public assetPageTestClass() throws IOException
+    {
+		super();
+	}
 
-    @BeforeTest
-    public void initiateBrowser() {
-         driver = super.Setup_Browser();
-        // driver = super.SetupCrossBrowser();
-      //  driver = super.Setup_HeadlessBrowser();
-        login = new LoginPage(driver);
-        login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
-        System.out.print("User logged in successfully");
-        asset = new assetPageClass(driver);
+    @BeforeMethod
+    public void initiateBrowser() throws IOException {
+    	 intialization();
+         login=new LoginPage();
+         login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
+         asset = new assetPageClass();
     }
 
     // Add asset
@@ -66,7 +64,7 @@ public class assetPageTestClass extends TestBase {
         }
          */
     }
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
 
         System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl()+"\n");

@@ -9,9 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.fnb.qa.base.TestBase;
-
-import io.qameta.allure.Allure;
 
 public class ListenersTestNG implements ITestListener {
 	public WebDriver webdriver = null;
@@ -23,17 +20,7 @@ public class ListenersTestNG implements ITestListener {
 	public void onTestFailure(ITestListener result) throws IOException {
 		System.out.println("----onTestFailure Method: " + ((ITestResult) result).getName() + " ----");
 		// Use this for take screenshot in the local folder
-		TestBase takeSS = new TestBase();
-		webdriver = takeSS.Setup_Browser();
-		webdriver = takeSS.TakeScreenshot(webdriver, "TestSSSS");
-		Allure.addAttachment("FailedTestCase_screenshot",
-				new ByteArrayInputStream(((TakesScreenshot) webdriver).getScreenshotAs(OutputType.BYTES)));
-
-		// Use this for take screenshot in the local folder
-
-		takeSS.TakeScreenshot(webdriver, "_(FailedTestCaseSS)" + ((ITestResult) result).getName());
 	}
-
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("!!!! onTestSkipped Method: " + result.getName() + " !!!!");
 	}
