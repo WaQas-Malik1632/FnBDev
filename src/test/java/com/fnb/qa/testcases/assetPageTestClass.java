@@ -11,14 +11,12 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-
 import java.io.IOException;
 import org.testng.Assert;
 
 public class assetPageTestClass extends TestBase {
-	
-	 	 LoginPage login;
-	     assetPageClass asset;
+    LoginPage login;
+    assetPageClass asset;
 
     public assetPageTestClass() throws IOException
     {
@@ -66,7 +64,6 @@ public class assetPageTestClass extends TestBase {
     }
     @AfterMethod
     public void tearDown() {
-
         System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl()+"\n");
     }
 }
