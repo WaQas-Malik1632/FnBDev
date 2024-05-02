@@ -29,7 +29,7 @@ public class HomePageTestClass extends TestBase {
         home = new HomePageClass();
     }
 
-    @Test(priority = 1, invocationCount = 1, enabled = false, description = "Home Page Test #1", groups = {"Smoke_Suite"})
+    @Test(priority = 1, invocationCount = 1, enabled = true, description = "Home Page Test #1", groups = {"Smoke_Suite"})
     @Description("Home Page->Verify that logged-in user is able to validate Home Page Title")
     @Epic("EP001")
     @Feature("Feature:001")
@@ -42,7 +42,7 @@ public class HomePageTestClass extends TestBase {
         Assert.assertTrue(true, "passed");
     }
 
-    @Test(priority = 2, invocationCount = 1, enabled = false, description = "Home Page Test #2", groups = {"Smoke_Suite"})
+    @Test(priority = 2, invocationCount = 1, enabled = true, description = "Home Page Test #2", groups = {"Smoke_Suite"})
     @Description("Home Page->Verify that logged-in user is able to validate Home Page Logo")
     @Epic("EP001")
     @Feature("Feature:001")
@@ -55,7 +55,7 @@ public class HomePageTestClass extends TestBase {
         Assert.assertTrue(true, "passed");
     }
 
-    @Test(priority = 3, invocationCount = 1, enabled = false, description = "Home Page Test #3", groups = {"Smoke_Suite"})
+    @Test(priority = 3, invocationCount = 1, enabled = true, description = "Home Page Test #3", groups = {"Smoke_Suite"})
     @Description("Home Page->Verify that logged-in user is able to view Notification Icon")
     @Epic("EP001")
     @Feature("Feature:001")
