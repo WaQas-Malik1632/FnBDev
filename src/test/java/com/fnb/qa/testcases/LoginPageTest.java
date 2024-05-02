@@ -29,13 +29,13 @@ public class LoginPageTest extends TestBase {
 		login = new LoginPage();
     }
 
-    // Enter correct Email and correct Password
+    // Validate that user can logged-in to the system using valid credentials
     @Test(invocationCount = 1, priority = 1, enabled = true, description = "Login Test#1", groups = {"Smoke_Suite"})
-    @Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk , password: Qajob@1234")
+    @Description("Validate that user can logged-in using valid credentials: Email:abdullah.bilal@nxb.com.pk , password: Qajob@1234")
     @Epic("EP001")
     @Feature("Feature:001")
-    @Story("Login Test")
-    @Step("Use basic steps")
+    @Story("Login TestCases")
+    @Step("Hit Site Url->Login")
     @Severity(SeverityLevel.BLOCKER)
     public void TestcaseToVerifyLoginWithBothCorrectEmailAndPassword() throws IOException {
         // ================Verify login with Take input from user====================
@@ -47,14 +47,14 @@ public class LoginPageTest extends TestBase {
         System.out.println("\n" + "Enter your Password:");
         String Pass = sc.nextLine();
         login.Login_Testcases(Email, Pass);
-
-      */
-        // Verify login with static values
-    //	 login.Login_Testcases("username", "password");
+*/
+       //  =====================================================================
+        // Verify login with passing credentials through object
+    	// login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
     	
-    	//Both ways are same 
-    //	 login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
-         login.Login_Testcases(prop.getProperty("username"),"password");
+        // Verify login with passing credentials through Config.properties file
+           login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
+   
     	
         //================Verify test with the Page Url===========================
         String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
@@ -65,6 +65,7 @@ public class LoginPageTest extends TestBase {
         }
         System.out.println("->The page Url has been successfully verified");
         System.out.println("User logged in successfully"+"\n");
+
         
         // ==================Verify test with the Page Title=======================
 		/*
@@ -76,22 +77,6 @@ public class LoginPageTest extends TestBase {
 		  System.out.println("The page title has been successfully verified");
 		  System.out.println("User logged in successfully");
 		 */
-    }
-
-    // Enter Correct Email and wrong Password
-    @Test(priority = 2, enabled = false, description = "Login Test#2", groups = {"Smoke_Suite"})
-    @Description("Verify test using these credentials: Email:abdullah.bilal@nxb.com.pk,  password:Test@Waqas")
-    @Epic("EP001")
-    @Feature("Feature:001")
-    @Story("Login Test")
-    @Step("Use basic steps")
-    @Severity(SeverityLevel.MINOR)
-    public void TestcaseToVerifyLoginWith_CorrectEmailAndWrongPassword() {
-
-       // login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Test@Waqas");
-        Assert.assertTrue(true, "Passed");
-        // Assert.assertTrue(facebook_Title.contains("Facebook"));
-        // System.out.println("Page title matched");
     }
 
     @AfterTest
