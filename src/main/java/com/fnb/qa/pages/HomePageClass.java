@@ -55,14 +55,20 @@ public class HomePageClass extends TestBase {
         WebElement AssetTile = driver.findElement(Home_AssetClick);
         AssetTile.isDisplayed();
         System.out.print("Page Url is:" + driver.getCurrentUrl()+"\n");
-        System.out.print("Asset Tile text is:" + AssetTile.getText());
-        AssetTile.click();
+        
+        WebElement AssetTileText=driver.findElement(By.xpath("//h6[normalize-space()='Assets']"));
+      
+        
+        System.out.print("Asset Tile text is:" +   AssetTileText.getText() +"\n");
+
         String expectedUrl = "https://fnbdev.vteamslabs.com/assets";
         String actualUrl = driver.getCurrentUrl();
         System.out.println("\n" + "->Verifying Url the Asset Page has started" + "\n");
         if (actualUrl == expectedUrl) {
             Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
         }
+
+
         System.out.println("->Successfully clicked on Asset Tile" + "\n");
         System.out.println("User can add the asset now" + "\n");
     }

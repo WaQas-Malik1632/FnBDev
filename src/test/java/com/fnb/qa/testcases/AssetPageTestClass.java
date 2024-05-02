@@ -4,7 +4,7 @@ import org.testng.annotations.*;
 import com.fnb.qa.base.TestBase;
 import com.fnb.qa.pages.HomePageClass;
 import com.fnb.qa.pages.LoginPage;
-import com.fnb.qa.pages.assetPageClass;
+import com.fnb.qa.pages.AssetPageClass;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -17,13 +17,13 @@ import java.io.IOException;
 
 import org.testng.Assert;
 
-public class assetPageTestClass extends TestBase {
+public class AssetPageTestClass extends TestBase {
 
     LoginPage login;
     HomePageClass home;
-    assetPageClass asset;
+    AssetPageClass asset;
 
-    public assetPageTestClass() throws IOException {
+    public AssetPageTestClass() throws IOException {
 
         super();
     }
@@ -37,7 +37,7 @@ public class assetPageTestClass extends TestBase {
         login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
         home = new HomePageClass();
         home.Home_AssetTileClick();
-        asset = new assetPageClass();
+        asset = new AssetPageClass();
     }
 
     // Add Asset->Verify that Logged-in user is able to add Asset successfully and validate the toast message

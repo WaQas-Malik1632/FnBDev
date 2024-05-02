@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import com.fnb.qa.base.TestBase;
 
-public class assetPageClass extends TestBase {
+public class AssetPageClass extends TestBase {
 
-    public assetPageClass() throws IOException {
+    public AssetPageClass() throws IOException {
 
         super();
     }
