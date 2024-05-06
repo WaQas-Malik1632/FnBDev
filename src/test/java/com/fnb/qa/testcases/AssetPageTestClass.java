@@ -1,5 +1,5 @@
 package com.fnb.qa.testcases;
-
+import com.fnb.qa.util.TestUtil;
 import org.testng.annotations.*;
 import com.fnb.qa.base.TestBase;
 import com.fnb.qa.pages.HomePageClass;
@@ -15,13 +15,17 @@ import io.qameta.allure.Story;
 
 import java.io.IOException;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
 public class AssetPageTestClass extends TestBase {
 
+	TestUtil testUtil;
     LoginPage login;
     HomePageClass home;
     AssetPageClass asset;
+    String sheetName = "addAsset";
+    
 
     public AssetPageTestClass() throws IOException {
 
@@ -32,6 +36,7 @@ public class AssetPageTestClass extends TestBase {
     public void initiateBrowser() throws IOException, InterruptedException {
 
         intialization();
+        testUtil = new TestUtil();
         login = new LoginPage();
         //   login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
         login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
@@ -41,7 +46,7 @@ public class AssetPageTestClass extends TestBase {
     }
 
     // Add Asset->Verify that Logged-in user is able to add Asset successfully and validate the toast message
-    @Test(priority = 1, invocationCount = 1, enabled = true, description = "Add Asset Test#1", groups = {"Smoke_Suite"})
+    @Test(priority = 1, invocationCount = 1, enabled = false, description = "Add Asset Test#1", groups = {"Smoke_Suite"})
     @Description("Add Asset->Verify that Logged-in user is able to add Asset successfully and validate the toast message")
     @Epic("EP001")
     @Feature("Feature:001")
@@ -71,11 +76,20 @@ public class AssetPageTestClass extends TestBase {
         }
          */
     }
+    @DataProvider
+    public Object[][] getAddAssetDataFromExcel() throws InvalidFormatException {
+
+        Object data[][] = TestUtil.getTestData(sheetName);
+        return data;
+    }
+    @Test (priority = 2, dataProvider = "getAddAssetDataFromExcel")
+    public void GetDataFromExcelToAddAssetToSystem(String AssetNo, String GoodsReceivedNo, String product, String LocationName, String Notes) throws InterruptedException {
+        asset.addAsset(AssetNo,GoodsReceivedNo,product,LocationName,Notes);
+    }
 
     @AfterMethod
     public void tearDown() {
 
         System.out.print("\n" + "Current Page URL is:" + driver.getCurrentUrl() + "\n");
     }
-
 }
