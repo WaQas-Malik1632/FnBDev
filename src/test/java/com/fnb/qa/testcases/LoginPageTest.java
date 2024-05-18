@@ -61,11 +61,6 @@ public class LoginPageTest extends TestBase {
         String ExpectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
         String ActualUrl = driver.getCurrentUrl();
         System.out.println("Verifying the page url has started");
-        if (actualUrl == expectedUrl) {
-            Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
-        }
-        System.out.println("->The page Url has been successfully verified");
-        System.out.println("User logged in successfully" + "\n");
 
         try {
             Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification failed: ");

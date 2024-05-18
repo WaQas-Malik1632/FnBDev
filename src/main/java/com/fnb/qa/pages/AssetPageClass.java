@@ -26,7 +26,7 @@ public class AssetPageClass extends TestBase {
 
     public void addAsset(String AssetNo, String GoodsReceivedNo, String product, String LocationName, String Notes) throws InterruptedException {
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         WebElement addAssetBtnClick = driver.findElement(addAssetBtn);
         addAssetBtnClick.click();
         WebElement assetNumber = driver.findElement(assetNo);
