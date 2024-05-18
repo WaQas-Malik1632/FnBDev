@@ -57,15 +57,18 @@ public class LoginPageTest extends TestBase {
    
     	
         //================Verify test with the Page Url===========================
-        String expectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
-        String actualUrl = driver.getCurrentUrl();
+        String ExpectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
+        String ActualUrl = driver.getCurrentUrl();
         System.out.println("Verifying the page url has started");
-        if (actualUrl == expectedUrl) {
-            Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
-        }
-        System.out.println("->The page Url has been successfully verified");
-        System.out.println("User logged in successfully"+"\n");
 
+        try {
+            Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification failed: ");
+            System.out.println("->The page Url has been successfully verified");
+            System.out.println("User logged in successfully" + "\n");
+        } catch (AssertionError e) {
+            System.out.println("Login Failed->These credentials do not match our records" + "\n");
+            throw e; // Re-throw the assertion error to ensure the test fails
+        }
         
         // ==================Verify test with the Page Title=======================
 		/*

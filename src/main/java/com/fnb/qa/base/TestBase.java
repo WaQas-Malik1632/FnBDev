@@ -20,7 +20,7 @@ public class TestBase {
 
 	public TestBase() throws IOException {
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("D:/Selenium Automation/FnBDev/src/main/java/com/fnb/qa/config/config.properties");
+		FileInputStream ip = new FileInputStream("E:/Selenium Automation/FnBDev/src/main/java/com/fnb/qa/config/config.properties");
 		prop.load(ip);
 	}
 	public static void intialization() {
