@@ -11,16 +11,20 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeTest;
+
 import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 public class LoginPageTest extends TestBase {
-	LoginPage login;
 
-	public LoginPageTest() throws IOException {
-		super();
-	}
+    LoginPage login;
+
+    public LoginPageTest() throws IOException {
+
+        super();
+    }
 
     @BeforeTest
     public void setUp() throws IOException {
@@ -48,18 +52,20 @@ public class LoginPageTest extends TestBase {
         String Pass = sc.nextLine();
         login.Login_Testcases(Email, Pass);
 */
-       //  =====================================================================
+        //  =====================================================================
         // Verify login with passing credentials through object
-    	// login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
-    	
+        // login.Login_Testcases("abdullah.bilal@nxb.com.pk", "Qajob@1234");
         // Verify login with passing credentials through Config.properties file
-           login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
-   
-    	
+        login.Login_Testcases(prop.getProperty("username"), prop.getProperty("password"));
         //================Verify test with the Page Url===========================
         String ExpectedUrl = "https://fnbdev.vteamslabs.com/dashboard";
         String ActualUrl = driver.getCurrentUrl();
         System.out.println("Verifying the page url has started");
+        if (actualUrl == expectedUrl) {
+            Assert.assertEquals(actualUrl, expectedUrl, "Page Url matched");
+        }
+        System.out.println("->The page Url has been successfully verified");
+        System.out.println("User logged in successfully" + "\n");
 
         try {
             Assert.assertEquals(ActualUrl, ExpectedUrl, "URL verification failed: ");
@@ -69,7 +75,7 @@ public class LoginPageTest extends TestBase {
             System.out.println("Login Failed->These credentials do not match our records" + "\n");
             throw e; // Re-throw the assertion error to ensure the test fails
         }
-        
+
         // ==================Verify test with the Page Title=======================
 		/*
 		  String title = "F&B System"; String actualTitle = driver.getTitle();
